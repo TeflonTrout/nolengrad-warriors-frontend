@@ -12,6 +12,8 @@
 
 .navbar .links {
     display: flex;
+    font-family: "Norse";
+    font-size: 18px;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
@@ -19,7 +21,8 @@
 
 .navbar .logo {
     color: #1366ff;
-    text-decoration: underline;
+    font-family: "Norse";
+    font-size: 24px;
     /* cursor: pointer; */
     width: 100%;
 }

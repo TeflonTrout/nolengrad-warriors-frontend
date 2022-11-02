@@ -20,7 +20,7 @@ const Mint = () => {
 
     //   CONTRACT WRITE CONFIGURATION
     const { config } = usePrepareContractWrite({
-        address: process.env.REACT_APP_CONTRACT_ADDRESS,
+        address: process.env.NEXT_PRIVATE_CONTRACT_ADDRESS,
         abi: [{
             "name": "mintNewWarrior",
             "type": "function",
@@ -57,7 +57,7 @@ const Mint = () => {
     })
 
     const { data: warriorSupply } = useContractRead({
-        address: process.env.REACT_APP_CONTRACT_ADDRESS,
+        address: process.env.NEXT_PRIVATE_CONTRACT_ADDRESS,
         abi: [{
             "inputs": [],
             "name": "getNumberOfWarriors",
@@ -78,7 +78,7 @@ const Mint = () => {
     })
 
     // const {data: warriorStats } = useContractRead({
-    //     address: process.env.REACT_APP_CONTRACT_ADDRESS,
+    //     address: process.env.NEXT_PRIVATE_CONTRACT_ADDRESS,
     //     abi: [{
     //         "inputs": [
     //             {
