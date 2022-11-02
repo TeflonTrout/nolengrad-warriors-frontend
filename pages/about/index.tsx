@@ -18,7 +18,8 @@ const About = () => {
           <div className={styles.stackContainer}>
             <ul>
               <h4>Frontend</h4>
-              <li>React/Next.js</li>
+              <li>Next.js</li>
+              <li>Typescript</li>
               <li>Redux</li>
               <li>CSS</li>
             </ul>
@@ -32,8 +33,8 @@ const About = () => {
             <ul>
               <h4>Other</h4>
               <li>Pinata Cloud</li>
-              <li>Vercel (Frontend hosting)</li>
-              <li>Heroku (CI/CD server deployment)</li>
+              <li>Vercel</li>
+              <li>Heroku</li>
               <li>Stable Diffusion (AI Generated Art)</li>
             </ul>
           </div>
