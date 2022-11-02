@@ -1,0 +1,38 @@
+.mint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.mint a {
+    text-decoration: none;
+}
+
+.mint .hero {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1366FF;
+    color: #181818;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.mint .hero h1 {
+    text-align: center;
+}
+
+.mint .hero h4 {
+    text-align: center;
+}
+
+.mint .buttonHero {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}

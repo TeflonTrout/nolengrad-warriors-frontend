@@ -1,26 +1,41 @@
-html,
+/* COLORS USED
+  MAIN BLUE: #1366FF
+  ICE BLUE: #8BFFFB
+  LIGHT GREY: #6C8D96
+  DARK GREY: #181818
+  DARK BLUE: #000B3D
+*/
+
 body {
-  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-width: 95vw;
+  min-height: 100vh !important;
+  padding: 0 20px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #181818;
 }
 
-a {
-  color: inherit;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  max-width: 100vw;
+  min-height: 100vh !important;
+  overflow-x: hidden;
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
 }

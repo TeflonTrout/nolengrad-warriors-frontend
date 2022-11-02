@@ -1,0 +1,31 @@
+.btn {
+    text-align: center;
+    padding: 5px 5px;
+    border-radius: 10px;
+    transition: .5s ease-in;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    transition: 0.15s ease-in-out;
+    background-color: #6C8D96;
+}
+
+.light {
+    background-color: #000B3D;
+    color: #8BFFFB;
+}
+
+.small {
+    width: 100px
+}
+
+.medium {
+    width: 150px;
+}
+
+.large {
+    width: 200px;
+}

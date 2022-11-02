@@ -1,0 +1,94 @@
+@-webkit-keyframes fadein {
+    from {
+      bottom: -20%;
+      opacity: 0;
+    }
+    to {
+      bottom: -10%;
+      opacity: 1;
+    }
+}
+  
+@keyframes fadein {
+    from {
+        bottom: -20%;
+        opacity: 0;
+    }
+    to {
+        bottom: -10%;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: -10%;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: -10%;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+.closed {
+    display: none;
+}
+
+.modal {
+    background-color: rgb(209, 208, 208);
+    border: 2px solid black;
+    height: 40vh;
+    width: 50vw;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+    left: 50%;
+    bottom: -10%;
+    transition: .15s ease-in;
+    -webkit-animation: fadein 1s;
+    animation: fadein 1s;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.modal .closeBtn {
+    display: flex;
+    position: absolute;
+    background-color: transparent;
+    right: 10px;
+    top: 10px;
+    color: #ffffff;
+    background-color: black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: .5s ease-in;
+}
+
+.modal .closeBtn:hover {
+    color: white;
+    background-color: #1366FF;
+    transition: .15s ease-in;
+    cursor:pointer
+}

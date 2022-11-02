@@ -1,0 +1,87 @@
+/* a {
+    text-decoration: none;
+    color: inherit !important;
+} */
+
+.card {
+    margin: 20px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: 6px solid grey;
+    box-sizing: content-box;
+    padding-bottom: 5px;
+    transition: .15s ease-in;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: .15s ease-in;
+    cursor: pointer;
+}
+
+.buttonContainer {
+    width: 256px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .cardImg img {
+    max-width: 250px;
+    width: 250px;
+    border-radius: 13px 13px 0 0 ;
+    box-sizing: content-box;
+}
+
+.card .cardStats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card .cardStats .statBox {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+}
+
+.card .cardStats h1 {
+    margin: 0;
+}
+
+.card .cardStats .statBox h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+}
+
+.card .cardStats .statBox p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+}

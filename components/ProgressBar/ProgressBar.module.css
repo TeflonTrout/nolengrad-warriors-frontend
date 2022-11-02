@@ -1,0 +1,49 @@
+.progressBar {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    width: 100%;
+    margin: 2.5px;
+}
+
+.progressBar .valueBar {
+    background-color: white;
+    width: 130px;
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 50px;
+}
+
+.progressBar .valueBar .fillerBar {
+    background-color: aqua;
+    border-radius: inherit;
+    min-width: 17%;
+}
+
+.progressBar h1 {
+    margin: 0;
+}
+
+.progressBar h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 18px;
+}
+
+.progressBar p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 65px;
+    margin-right: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+}

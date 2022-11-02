@@ -1,0 +1,102 @@
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+}
+
+.aboutPage .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #6C8D96;
+    border-radius: 20px;
+    min-height: 200px;
+    padding: 20px;
+    width: 70%;
+}
+
+.aboutPage .hero h2 {
+    padding: 10px 20px;
+    margin: 0;
+    justify-self: center;
+    text-align: center;
+}
+
+.aboutPage .hero .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.aboutPage .hero .container h4 {
+    padding: 0px;
+}
+
+.aboutPage .hero .container h5 {
+    margin: 0px; 
+}
+
+.aboutPage .hero .stackContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.aboutPage .hero .stackContainer ul {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.aboutPage .hero span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-bottom: 2px solid black;
+    width: 94%;
+}
+
+.aboutPage .hero h4 {
+    margin: 0 !important;
+    padding: 10px 20px;
+}
+
+.aboutPage .hero p {
+    margin: 0 !important;
+    padding: 10px 20px;
+}
+
+
+.aboutPage .hero a {
+    transition: .15s ease-in;
+    color: #8BFFFB !important;
+    cursor: pointer;
+}
+
+.aboutPage .hero a:hover {
+    transition: .15s ease-in;
+    color: #000B3D !important;
+    cursor: pointer;
+}
+
+.aboutPage .hero .attributeList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px;
+}
+
+.aboutPage .hero .attributeList .listItem {
+
+}

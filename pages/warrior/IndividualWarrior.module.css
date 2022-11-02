@@ -1,0 +1,51 @@
+.warriorPage {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.warriorPage .container {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.warriorPage .container .statBox {
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.warriorPage .container .statBox .circle {
+    width: 100px;
+    height: 100px;
+}
+
+.warriorPage .imgContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.warriorPage .imgContainer img {
+    border-radius: 20px;
+}
+
+.warriorPage .imgContainer .rarity {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.warriorPage .imgContainer .circle {
+    width: 100px;
+    height: 100px;
+}
