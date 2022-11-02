@@ -14,9 +14,9 @@ const Footer = () => {
           <Link href='/mint'><p>Mint</p></Link>
         </div>
         <div>
-          <a href="https://testnets.opensea.io/" target="_blank" rel='noreferrer'><p>OpenSea</p></a>
+          <a href="https://github.com/TeflonTrout/nolengrad-warriors-frontend" target="_blank" rel='noreferrer'><p>GitHub</p></a>
           <Link href="/"><p>Contract</p></Link>
-          <a href="https://www.github.com/teflontrout" target="_blank" rel='noreferrer'><p>GitHub</p></a>
+          <a href="https://testnets.opensea.io/" target="_blank" rel='noreferrer'><p>OpenSea</p></a>
         </div>
     </div>
   )

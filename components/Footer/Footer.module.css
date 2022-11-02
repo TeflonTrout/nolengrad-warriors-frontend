@@ -11,7 +11,8 @@
 }
 
 .footer p {
-    color: black;
+    font-family: "NorseBold";
+    color: white;
 }
 
 .footer .logoContainer {
@@ -28,6 +29,7 @@
 
 .footer .logoContainer h2 a {
     text-decoration: none;
+    font-family: "Norse";
     color: #1366FF;
 }
 
