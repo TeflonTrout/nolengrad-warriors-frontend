@@ -8,7 +8,7 @@ const About = () => {
         <div>
           <h2>The whole purpose of the project is to display my expertise with Fullstack Web3 Engineering!</h2>
           <h4>I have written everything from the frontend you see now to the backend server and the Solidity contract!</h4>
-          <p>The Frontend code can be viewed here: <a href="/" target="_blank" rel="noreferrer">Frontend Code</a></p>
+          <p>The Frontend code can be viewed here: <a href="https://github.com/TeflonTrout/nolengrad-warriors-frontend" target="_blank" rel="noreferrer">Frontend Code</a></p>
           <p>The Backend server code can be viewed here: <a href="/" target="_blank" rel="noreferrer">Backend Code</a></p>
           <p>The Smart Contract can be viewed here: <a href="/" target="_blank" rel="noreferrer">Solidity Code</a></p>
         </div>

@@ -1,10 +1,12 @@
 .btn {
+    font-family: "Norse";
     text-align: center;
     padding: 5px 5px;
     border-radius: 10px;
     transition: .5s ease-in;
     cursor: pointer;
     white-space: nowrap;
+    font-size: 24px;
 }
 
 .btn:hover {

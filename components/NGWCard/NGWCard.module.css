@@ -59,6 +59,7 @@
 }
 
 .card .cardStats h1 {
+    font-family: "Norse";
     margin: 0;
 }
 
@@ -72,6 +73,10 @@
     justify-content: flex-start;
     align-items: center;
     font-size: 18px;
+}
+
+.card .cardStats h3 {
+    font-family: "Norse";
 }
 
 .card .cardStats .statBox p {
