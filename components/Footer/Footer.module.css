@@ -12,6 +12,7 @@
 
 .footer p {
     font-family: "NorseBold";
+    font-size: 28px;
     color: white;
 }
 
@@ -24,16 +25,17 @@
 
 .footer .logoContainer h2 {
     text-align: center;
-    cursor: pointer;
+    font-size: 48px;
 }
 
 .footer .logoContainer h2 a {
+    cursor: pointer;
     text-decoration: none;
     font-family: "Norse";
     color: #1366FF;
 }
 
 .footer .logoContainer h2 a:hover {
-    color: #000B3D;
+    color: #6C8D96;
     transition: .15s ease-in-out;
 }
