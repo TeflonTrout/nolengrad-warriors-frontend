@@ -32,10 +32,10 @@
     cursor: pointer;
     text-decoration: none;
     font-family: "Norse";
-    color: #1366FF;
+    color: #000B3D;
 }
 
 .footer .logoContainer h2 a:hover {
-    color: #6C8D96;
+    color: #1366FF;
     transition: .15s ease-in-out;
 }

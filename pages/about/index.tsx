@@ -6,37 +6,43 @@ const About = () => {
     <div className={styles.aboutPage}>
       <div className={styles.hero}>
         <div>
-          <h2>The whole purpose of the project is to display my expertise with Fullstack Web3 Engineering!</h2>
-          <h4>I have written everything from the frontend you see now to the backend server and the Solidity contract!</h4>
+          <h1>The whole purpose of the project is to display my expertise with Fullstack Web3 Engineering!</h1>
+          <h2>I have written everything from the frontend you see now to the backend server and the Solidity contract!</h2>
           <p>The Frontend code can be viewed here: <a href="https://github.com/TeflonTrout/nolengrad-warriors-frontend" target="_blank" rel="noreferrer">Frontend Code</a></p>
           <p>The Backend server code can be viewed here: <a href="https://github.com/TeflonTrout/nolengrad-warriors-server" target="_blank" rel="noreferrer">Backend Code</a></p>
           <p>The Smart Contract can be viewed here: <a href="/" target="_blank" rel="noreferrer">Solidity Code</a></p>
         </div>
         <span></span>
         <div className={styles.container}>
-          <h2>Here is the tech stack I used to create NGW!</h2>
+          <h1>Here is the tech stack I used to create NGW!</h1>
           <div className={styles.stackContainer}>
-            <ul>
-              <h4>Frontend</h4>
-              <li>Next.js</li>
-              <li>Typescript</li>
-              <li>Redux</li>
-              <li>CSS</li>
-            </ul>
-            <ul>
-              <h4>Backend</h4>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>MongoDB</li>
-              <li>Solidity</li>
-            </ul>
-            <ul>
-              <h4>Other</h4>
-              <li>Pinata Cloud</li>
-              <li>Vercel</li>
-              <li>Heroku</li>
-              <li>Stable Diffusion (AI Generated Art)</li>
-            </ul>
+            <div className={styles.stackList}>
+              <h1>Frontend</h1>
+              <ul>
+                <li>Next.js</li>
+                <li>Typescript</li>
+                <li>Redux</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+            <div className={styles.stackList}>
+              <h1>Backend</h1>
+              <ul>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+                <li>Solidity</li>
+              </ul>
+            </div>
+            <div className={styles.stackList}>
+              <h1>Other</h1>
+              <ul>
+                <li>Pinata Cloud</li>
+                <li>Vercel</li>
+                <li>Heroku</li>
+                <li>Stable Diffusion (AI Art)</li>
+              </ul>
+            </div>
           </div>
         </div>
         <span></span>
@@ -57,8 +63,10 @@ const About = () => {
           <p>The "House" and "Rarity" traits are used to evaluate which image the warrior will have. Also note, all the art is AI generated!!</p>
         </div>
         <span></span>
-        <h4>The cool part you ask, all attributes are given ON MINT! What this means is there is no way to snipe a warrior with specific attributes.</h4>
-        <h4>There is a private server that takes the values and stores the metadata in MongoDB.</h4>
+        <div className={styles.bottomContainer}>
+          <h1>The cool part you ask, all attributes are given ON MINT! What this means is there is no way to snipe a warrior with specific attributes.</h1>
+          <h1>There is a private server that takes the values and stores the metadata in MongoDB.</h1>
+        </div>
       </div>
     </div>
   )
