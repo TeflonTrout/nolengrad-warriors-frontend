@@ -10,9 +10,10 @@ import GalleryFilterButton from '../../components/GalleryFilterButton/GalleryFil
 
 const Gallery = () => {
   const [dataArray, setDataArray] = useState<any>([]);
+  const [active, setActive] = useState<string>("");
   const [keyword, setKeyword] = useState<number>(1);
-  const [isInverted, setIsInverted] = useState<boolean>(false);
 
+  // FETCH DATA FROM API
   useEffect(() => {
     const getData = async () => {
       try {
@@ -37,43 +38,48 @@ const Gallery = () => {
     getData();
   }, [])
 
-  useEffect(() => {
-    const sortByKeyword = (type:number) => {
-      if(isInverted){
-        const newArr = [...dataArray].sort((a:Warrior, b:Warrior) => a.attributes[type].value > b.attributes[type].value ? -1 : 1)
+  // FUNCTION TO SORT ARRAY BY ATTRIBUTE
+  const sortArray = (type:string) => {
+      const types:Object = {
+        strength: 1,
+        dexterity: 2,
+        charisma: 3,
+        wisdom: 4,
+        rarity: 5
+      }
+      const filterProperty = Number(types[type as keyof Object]);
+      if(active !== `${type}-asc`){
+        setActive(`${type}-asc`)
+        const newArr = [...dataArray].sort((a:Warrior, b:Warrior) => {
+          return a.attributes[filterProperty].value > b.attributes[filterProperty].value ? -1 : 1
+        })
         setDataArray(newArr);
-      } else {
-        const newArr = [...dataArray].sort((a:Warrior, b:Warrior) => a.attributes[type].value > b.attributes[type].value ? 1 : -1)
+      } else if (active === `${type}-asc`) {
+        setActive(`${type}-desc`)
+        const newArr = [...dataArray].sort((a:Warrior, b:Warrior) => {
+          return a.attributes[filterProperty].value < b.attributes[filterProperty].value ? -1 : 1
+        })
         setDataArray(newArr)
       }
-    }
-    sortByKeyword(keyword)
-  }, [keyword, isInverted])
-  
-  const updateKeyword = (newFilter:number) => {
-    setKeyword(newFilter);
   }
 
   return (
     <div className={styles.galleryPage}>
       <div className={styles.filterButtonContainer}>
         <div className={keyword === 1 ? styles.filterButtonActive : styles.filterButton}>
-          <GalleryFilterButton onClick={() => updateKeyword(1)} keyword={keyword} text="Strength" isInverted={isInverted} />
-        </div>
-        <div className={keyword === 1 ? styles.filterButtonActive : styles.filterButton}>
-          <h1 onClick={() => updateKeyword(1)}>Strength</h1>
+          <GalleryFilterButton onClick={() => sortArray("strength")} active={active} keyword={keyword} text="Strength" />
         </div>
         <div className={keyword === 2 ? styles.filterButtonActive : styles.filterButton}>
-          <h1 onClick={() => updateKeyword(2)}>Dexterity</h1>
+          <GalleryFilterButton onClick={() => sortArray("dexterity")} active={active} keyword={keyword} text="Dexterity" />
         </div>
         <div className={keyword === 3 ? styles.filterButtonActive : styles.filterButton}>
-          <h1 onClick={() => updateKeyword(3)}>Charisma</h1>
+          <GalleryFilterButton onClick={() => sortArray("charisma")} active={active} keyword={keyword} text="Charisma" />
         </div>
         <div className={keyword === 4 ? styles.filterButtonActive : styles.filterButton}>
-          <h1 onClick={() => updateKeyword(4)}>Wisdom</h1>
+          <GalleryFilterButton onClick={() => sortArray("wisdom")} active={active} keyword={keyword} text="Wisdom" />
         </div>
         <div className={keyword === 5 ? styles.filterButtonActive : styles.filterButton}>
-          <h1 onClick={() => updateKeyword(5)}>Rarity</h1>
+          <GalleryFilterButton onClick={() => sortArray("rarity")} active={active} keyword={keyword} text="Rarity" />
         </div>
       </div>
       <div className={styles.cardGrid}>
