@@ -17,14 +17,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 100%;
 }
 
 .galleryPage .filterButtonContainer .filterButtonActive {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 100%;
 }
 
 .galleryPage .filterButtonContainer .filterButtonActive h1 {

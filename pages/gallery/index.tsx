@@ -11,7 +11,7 @@ import GalleryFilterButton from '../../components/GalleryFilterButton/GalleryFil
 const Gallery = () => {
   const [dataArray, setDataArray] = useState<any>([]);
   const [active, setActive] = useState<string>("");
-  const [keyword, setKeyword] = useState<number>(1);
+  const [keyword, setKeyword] = useState<number>(0);
 
   // FETCH DATA FROM API
   useEffect(() => {
@@ -48,6 +48,7 @@ const Gallery = () => {
         rarity: 5
       }
       const filterProperty = Number(types[type as keyof Object]);
+      setKeyword(filterProperty);
       if(active !== `${type}-asc`){
         setActive(`${type}-asc`)
         const newArr = [...dataArray].sort((a:Warrior, b:Warrior) => {
