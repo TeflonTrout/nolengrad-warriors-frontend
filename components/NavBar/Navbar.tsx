@@ -14,9 +14,9 @@ const Navbar: FC = () => {
         <h2><Link href="/about">About</Link></h2>
         <h2><Link href="/gallery">Gallery</Link></h2>
         <h2><Link href="/mint">Mint</Link></h2>
-        <div className={styles.connectBtn}>
-          <ConnectButton showBalance={true} accountStatus="avatar"/>
-        </div>
+      </div>
+      <div className={styles.connectBtn}>
+        <ConnectButton showBalance={true} accountStatus="avatar"/>
       </div>
     </div>
   )

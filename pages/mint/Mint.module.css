@@ -40,3 +40,21 @@
     width: 100%;
     align-items: center;
 }
+
+@media screen and (max-width:600px) {
+    .mint {
+        margin-bottom: 20px;
+    }
+
+    .mint .buttonHero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .mint .buttonHero .button {
+        padding: 5px;
+    }
+}
