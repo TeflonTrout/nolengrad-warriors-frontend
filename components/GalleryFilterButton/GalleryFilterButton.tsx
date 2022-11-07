@@ -19,7 +19,8 @@ const GalleryFilterButton = (props: FilterButtonProps) => {
                     ? <p style={{marginLeft: '10px', rotate: "180deg"}}>V</p>
                     : props.active === `${props.text.toLowerCase()}-desc` 
                     ? <p style={{marginLeft: '10px'}}>V</p> 
-                    : null }</p>
+                    : null }
+            </p>
         </div>
     </div>
   )

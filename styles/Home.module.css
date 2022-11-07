@@ -18,3 +18,27 @@
   justify-content: center;
   grid-template-columns: repeat(auto-fit, minmax(262px, 1fr));
 }
+
+@media screen and (max-width:600px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .home .header {
+    font-family: "Norse";
+    color: #1366FF;
+  }
+  
+  .home .cardGallery {
+    display: grid;
+    width: 100%;
+    grid-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(262px, 1fr));
+  }
+}

@@ -72,3 +72,82 @@
     align-items: center;
     flex-direction: column;
 }
+
+@media screen and (max-width: 600px) {
+    .galleryPage {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .galleryPage .filterButtonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .galleryPage .filterButtonContainer .filterButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+    }
+    
+    .galleryPage .filterButtonContainer .filterButtonActive {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        margin: 0px;
+    }
+    
+    .galleryPage .filterButtonContainer .filterButtonActive h1 {
+        font-size: 18px;
+        color: #1366FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-family: "Norse";
+        transition: .15s ease-in;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .galleryPage .filterButtonContainer h1 {
+        font-size: 18px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-family: "Norse";
+        transition: .15s ease-in;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .galleryPage .filterButtonContainer h1:hover {
+        color: #1366FF;
+        transition: .15s ease-in;
+    }
+    
+    .galleryPage .cardGrid {
+        display: grid;
+        width: 100%;
+        grid-gap: 10px;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(262px, 1fr));
+    }
+    
+    .galleryPage .cardGrid .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

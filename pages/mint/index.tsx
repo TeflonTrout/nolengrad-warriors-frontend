@@ -137,10 +137,10 @@ const Mint = () => {
                     verifiably random NFT's. Test it out below!
                 </h3>
                 <div className={styles.buttonHero}>
-                    <div onClick={() => mintNewWarrior()}>
+                    <div className={styles.button} onClick={() => mintNewWarrior()}>
                         <Button text="Recruit Warrior" theme="light" width="medium" />
                     </div>
-                    <Link href="/about">
+                    <Link href="/about" className={styles.button}>
                         <Button text="Learn More" theme="light" width="medium" />
                     </Link>
                 </div>
