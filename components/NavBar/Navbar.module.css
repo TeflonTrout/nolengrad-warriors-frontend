@@ -36,7 +36,62 @@
 }
 
 .navbar .links h2:hover {
-    color: #6C8D96;
+    color: #88A6AA;
     transform: scale(1.1);
     transition: 0.15s ease-in;
+}
+
+.navbar .connectBtn {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .navbar a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .navbar .links {
+        display: flex;
+        font-family: "Norse";
+        font-size: 18px;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .navbar .logo {
+        color: #1366ff;
+        font-family: "Norse";
+        font-size: 24px;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .navbar .links h2 {
+        text-decoration: none;
+        cursor: pointer;
+        transition: .5s ease-in;
+        color: #1366FF;
+    }
+    
+    .navbar .links h2:hover {
+        color: #88A6AA;
+        transform: scale(1.1);
+        transition: 0.15s ease-in;
+    }
+
+    .navbar .connectBtn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }

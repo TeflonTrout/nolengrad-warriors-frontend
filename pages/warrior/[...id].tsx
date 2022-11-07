@@ -4,6 +4,7 @@ import styles from "./IndividualWarrior.module.css"
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import Button from '../../components/Button/Button';
 
 type URLParams = {
     id: string
@@ -67,9 +68,9 @@ const IndividualWarrior = () => {
               : {}} />
         </div>
         <div className={styles.container}>
-          <div style={{display: 'flex', justifyContent: "space-between", width: '50%'}}>
-            <h1 style={{margin: '0px'}}>{warriorData?.name}</h1>
-            <p onClick={() => renameWarrior()}>E</p>
+          <div style={{display: 'flex', justifyContent: "space-between", alignItems: 'center', width: '75%', marginBottom: '20px'}}>
+            <h1 className={styles.header}>{warriorData?.name}</h1>
+            <Button text="Edit Name" theme="light" width='large'/>
           </div>
           {warriorData?.attributes?.slice(1,5)?.map((attribute:any) => (
             <div className={styles.statBox}>
@@ -80,13 +81,14 @@ const IndividualWarrior = () => {
                   minValue={0}
                   maxValue={10}
                   background={true} 
-                  strokeWidth={10}
+                  strokeWidth={15}
                   styles={buildStyles({
-                    pathColor: "black",
-                    textColor: "black",
+                    pathColor: "#1366FF",
+                    textColor: "white",
                     trailColor: "darkgrey",
-                    backgroundColor: "white",
-                    strokeLinecap: "butt"
+                    backgroundColor: "#181818",
+                    strokeLinecap: "butt",
+                    textSize: "36px"
                   })}
                   text={`${attribute?.value}`}/>
               </div>

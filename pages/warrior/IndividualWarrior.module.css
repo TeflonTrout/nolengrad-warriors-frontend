@@ -7,11 +7,18 @@
 
 .warriorPage .container {
     width: 50%;
-    padding: 20px;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    font-family: "Norse";
+}
+
+.warriorPage .container .header {
+    color: white;
+    font-size: 48px;
+    margin: 0px;
 }
 
 .warriorPage .container .statBox {
@@ -20,6 +27,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 10px;
+    color: #1366FF;
+}
+
+.warriorPage .container .statBox h1 {
+    font-size: 36px;
 }
 
 .warriorPage .container .statBox .circle {
@@ -32,7 +44,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .warriorPage .imgContainer img {
