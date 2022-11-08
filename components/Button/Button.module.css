@@ -20,6 +20,11 @@
     color: #8BFFFB;
 }
 
+.secondary {
+    color: #000B3D;
+    background-color: #8BFFFB;
+}
+
 .small {
     width: 100px
 }

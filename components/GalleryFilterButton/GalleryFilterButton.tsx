@@ -11,14 +11,14 @@ export interface FilterButtonProps {
 
 const GalleryFilterButton = (props: FilterButtonProps) => {
   return (
-    <div className={styles.filterButton} onClick={props.onClick}>
-        <h1 unselectable="on">{props.text}</h1>
+    <div className={styles.filterButton}>
+        <h1 unselectable="on" onClick={props.onClick}>{props.text}</h1>
         <div>
             <p style={{color: 'white'}}>
                 {props.active === `${props.text.toLowerCase()}-asc` 
                     ? <p style={{marginLeft: '10px', rotate: "180deg"}}>V</p>
                     : props.active === `${props.text.toLowerCase()}-desc` 
-                    ? <p style={{marginLeft: '10px'}}>V</p> 
+                    ? <p>V</p> 
                     : null }
             </p>
         </div>

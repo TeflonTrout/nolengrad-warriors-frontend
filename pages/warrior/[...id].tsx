@@ -46,7 +46,7 @@ const IndividualWarrior = () => {
 
   const renameWarrior = async () => {
     try {
-      console.log('yes')
+
     } catch(e){
       console.error(e)
     }
@@ -70,7 +70,9 @@ const IndividualWarrior = () => {
         <div className={styles.container}>
           <div style={{display: 'flex', justifyContent: "space-between", alignItems: 'center', width: '75%', marginBottom: '20px'}}>
             <h1 className={styles.header}>{warriorData?.name}</h1>
-            <Button text="Edit Name" theme="light" width='large'/>
+            {/* <div onClick={() => renameWarrior()}>
+              <Button text="Edit Name" theme="secondary" width='md-lg'/>
+            </div> */}
           </div>
           {warriorData?.attributes?.slice(1,5)?.map((attribute:any) => (
             <div className={styles.statBox}>
