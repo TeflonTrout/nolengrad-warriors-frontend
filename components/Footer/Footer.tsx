@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         <div className={styles.container}>
           <a href="https://github.com/TeflonTrout/nolengrad-warriors-frontend" target="_blank" rel='noreferrer'><p>GitHub</p></a>
-          <Link href="/"><p>Contract</p></Link>
+          <Link href="https://goerli.etherscan.io/address/0x5f78e249f0eb5271567079c2d43abb87664a4510"><p>Contract</p></Link>
           <a href="https://testnets.opensea.io/" target="_blank" rel='noreferrer'><p>OpenSea</p></a>
         </div>
     </div>
