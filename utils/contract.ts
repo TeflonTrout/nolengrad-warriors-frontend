@@ -103,6 +103,13 @@ export const contractABI = [
 	},
 	{
 		"inputs": [],
+		"name": "mintArmy",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "mintNewWarrior",
 		"outputs": [],
 		"stateMutability": "payable",
