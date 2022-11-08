@@ -31,38 +31,9 @@ const Mint = () => {
         },
     })
 
-    //   CONTRACT MINT ARMY CONFIGURATION
-    const { config: configArmy } = usePrepareContractWrite({
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
-        abi: [{
-            "name": "mintArmy",
-            "outputs": [],
-            "stateMutability": "payable",
-            "type": "function",
-            "inputs": []
-        }] as const,
-        functionName: 'mintArmy',
-        overrides: {
-            value: ethers.utils.parseEther('0.004'),
-        },
-    })
-
     //   FUNCTION FOR CALLING THE CONTRACT MINT FUNCTION
     const { write } = useContractWrite({
         ...config,
-        onSuccess(data) {
-            dispatch(setIsMintingTrue())
-            dispatch(setModalData([data.hash, "Pending..."]))
-        },
-        onError(data) {
-            dispatch(setIsMintingTrue())
-            dispatch(setModalData([data.message, "Error"]))
-        }
-    })
-
-    //   FUNCTION FOR CALLING THE CONTRACT MINT ARMY FUNCTION
-    const { write: writeArmy } = useContractWrite({
-        ...configArmy,
         onSuccess(data) {
             dispatch(setIsMintingTrue())
             dispatch(setModalData([data.hash, "Pending..."]))
@@ -114,31 +85,20 @@ const Mint = () => {
         }
     }
 
-    // CONTRACT FUNCTION FOR MINTING THE NFT
-    const mintArmy = () => {
-        dispatch(setIsMintingTrue())
-        if(address === undefined){
-            dispatch(setModalData(["User not signed in", "Error"]))
-        } else{
-            dispatch(setModalData(["", "Pending..."]))
-            writeArmy?.()
-        }
-    }
-
     return (
         <div className={styles.mint}>
             <div className={styles.hero}>
                 <div>
                     <h1>Welcome to Nolengrad!</h1>
                     <h3>War has been declared. Recruit warriors to protect your kingdom!</h3>
-                    <h3 style={{display: 'flex', justifyContent: 'center'}}>Number of Vikings Deployed: &nbsp;{state.currentNGWSupply === 0 ? <Skeleton width={20} height={20} style={{display: 'flex', alignItems: "center"}}/> : state.currentNGWSupply}/256</h3>
+                    <h3 style={{display: 'flex', justifyContent: 'center', alignItems: "center"}}>Number of Vikings Deployed: &nbsp;{state.currentNGWSupply === 0 ? <Skeleton width={20} height={28} /> : state.currentNGWSupply}/256</h3>
                 </div>
                 <h3>Nolengrad Warriors is an NFT project utilizing Chainlink VRF to produce
                     verifiably random NFT's. Test it out below!
                 </h3>
                 <div className={styles.buttonHero}>
                     <div className={styles.button} onClick={() => mintNewWarrior()}>
-                        <Button text="Recruit - 0.01 ETH" theme="light" width="medium" />
+                        <Button text="Recruit - 0.001 ETH" theme="light" width="medium" />
                     </div>
                     <Link href="/about" className={styles.button}>
                         <Button text="Learn More" theme="light" width="medium" />
