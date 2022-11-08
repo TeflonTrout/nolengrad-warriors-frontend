@@ -1,0 +1,17 @@
+.filterButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    width: 100%;
+}
+
+.filterButton p {
+    width: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .filterButton p {
+        display: none;
+    }
+}

@@ -12,10 +12,11 @@
     display: flex;
     justify-content: flex-start;
     border-radius: 50px;
+    box-sizing: border-box;
 }
 
 .progressBar .valueBar .fillerBar {
-    background-color: aqua;
+    background-color: #1366FF;
     border-radius: inherit;
     min-width: 17%;
 }

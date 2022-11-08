@@ -1,7 +1,7 @@
 /* COLORS USED
   MAIN BLUE: #1366FF
   ICE BLUE: #8BFFFB
-  LIGHT GREY: #6C8D96
+  LIGHT GREY: #88A6AA
   DARK GREY: #181818
   DARK BLUE: #000B3D
 */
@@ -30,7 +30,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background-color: #181818;
+  background: rgb(24,24,24);
+  background: linear-gradient(180deg, rgba(24,24,24,1) 30%, rgba(108,141,150,1) 100%);
 }
 
 code {

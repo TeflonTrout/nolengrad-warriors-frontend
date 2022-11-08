@@ -188,14 +188,14 @@ const Mint = () => {
                     <h3>War has been declared. Recruit warriors to protect your kingdom!</h3>
                     <h3 style={{display: 'flex', justifyContent: 'center'}}>Number of Vikings Deployed: &nbsp;{state.currentNGWSupply === 0 ? <Skeleton width={20} height={20} /> : state.currentNGWSupply}/256</h3>
                 </div>
-                <h3>Battle for Icy Fjord is an NFT project utilizing Chainlink VRF to produce
+                <h3>Nolengrad Warriors is an NFT project utilizing Chainlink VRF to produce
                     verifiably random NFT's. Test it out below!
                 </h3>
                 <div className={styles.buttonHero}>
-                    <div onClick={() => mintNewWarrior()}>
+                    <div className={styles.button} onClick={() => mintNewWarrior()}>
                         <Button text="Recruit Warrior" theme="light" width="medium" />
                     </div>
-                    <Link href="/about">
+                    <Link href="/about" className={styles.button}>
                         <Button text="Learn More" theme="light" width="medium" />
                     </Link>
                 </div>
