@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Button from "../../components/Button/Button"
 import styles from "./Mint.module.css"
 import { ethers } from 'ethers'
+import axios, { AxiosRequestConfig } from 'axios';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -53,6 +54,7 @@ const Mint = () => {
         onSuccess(txData) {
             dispatch(setIsMintingTrue())
             dispatch(setModalData(["", "Minted"]))
+            sendMetadataToServer(state?.currentNGWSupply)
         }
     })
 
@@ -77,42 +79,95 @@ const Mint = () => {
         }
     })
 
-    // const {data: warriorStats } = useContractRead({
-    //     address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
-    //     abi: [{
-    //         "inputs": [
-    //             {
-    //                 "internalType": "uint256",
-    //                 "name": "warriorId",
-    //                 "type": "uint256"
-    //             }
-    //         ],
-    //         "name": "getWarriorStats",
-    //         "outputs": [
-    //             {
-    //                 "internalType": "uint256[6]",
-    //                 "name": "metadata",
-    //                 "type": "uint256[6]"
-    //             },
-    //             {
-    //                 "internalType": "string",
-    //                 "name": "uri",
-    //                 "type": "string"
-    //             }
-    //         ],
-    //         "stateMutability": "view",
-    //         "type": "function"
-    //     }] as const,
-    //     functionName: 'getWarriorStats',
-    //     args: [Number(warriorSupply?.toString())],
-    //     enabled: false,
-    //     onSuccess(data) {
-    //         console.log(Number(warriorSupply?.toString()))
-    //     },
-    //     onError(err) {
-    //         console.log('here is the error', err.message)
-    //     },
-    // })
+    const {data: warriorStats, refetch: getWarriorStatsFromContract } = useContractRead({
+        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+        abi: [{
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "warriorId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getWarriorStats",
+            "outputs": [
+                {
+                    "internalType": "uint256[6]",
+                    "name": "metadata",
+                    "type": "uint256[6]"
+                },
+                {
+                    "internalType": "string",
+                    "name": "uri",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }] as const,
+        functionName: 'getWarriorStats',
+        args: [ethers.BigNumber.from(state?.currentNGWSupply)],
+        enabled: false,
+        onSuccess(data) {
+            console.log(Number(warriorSupply?.toString()))
+        },
+        onError(err) {
+            console.log('Error: ', err.message)
+        },
+    })
+
+    const sendMetadataToServer = async (supply:any) => {
+        try {
+            const newWarriorData = await getWarriorStatsFromContract()
+            const arrayOfAttributes = newWarriorData?.data?.[0]
+            var newMetadata = JSON.stringify({
+                "description": "Fast collection of 256 Viking Warriors preparing for war!", 
+                "external_url": `https://battle-for-icy-fjord.netlify.app/ngw/${supply.toString()}`, 
+                "image": `https://gateway.pinata.cloud/ipfs/QmXvu7prPdubtzNLwNzBs8gURxh79GjeX9jQA8PmxjGZtm/${arrayOfAttributes?.[4].toString()}${arrayOfAttributes?.[5].toString()}.png`, 
+                "name": `Warrior #${supply.toString()}`,    
+                "attributes": [
+                    {
+                        "trait_type": "tokenId",
+                        "value": supply
+                    },
+                    {
+                    "trait_type": "Strength", 
+                    "value": arrayOfAttributes?.[0].toString()
+                    }, 
+                    {
+                    "trait_type": "Dexterity", 
+                    "value": arrayOfAttributes?.[1].toString()
+                    }, 
+                    {
+                    "trait_type": "Charisma", 
+                    "value": arrayOfAttributes?.[2].toString()
+                    }, 
+                    {
+                    "trait_type": "Wisdom", 
+                    "value": arrayOfAttributes?.[3].toString()
+                    }, 
+                    {
+                    "trait_type": "House", 
+                    "value": arrayOfAttributes?.[4].toString()
+                    }, 
+                    {
+                    "trait_type": "Rarity", 
+                    "value": arrayOfAttributes?.[5].toString()
+                    }
+                ]
+            })           
+            console.log("posted metadata:", newMetadata)
+            var config:AxiosRequestConfig = {
+                method: 'post',
+                url: `https://battle-for-icy-fjord-server.herokuapp.com/warriors/${supply}?strength=${arrayOfAttributes?.[0].toString()}&dexterity=${arrayOfAttributes?.[1].toString()}&charisma=${arrayOfAttributes?.[2].toString()}&wisdom=${arrayOfAttributes?.[3].toString()}&house=${arrayOfAttributes?.[4].toString()}&rarity=${arrayOfAttributes?.[5].toString()}`,
+                data : newMetadata
+            }
+
+           await axios(config)
+        }catch(e){
+            console.log(e)
+        }
+    }
     
     // INTERNAL FUNCTION FOR MINTING THE NFT
     const mintNewWarrior = () => {
