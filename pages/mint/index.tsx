@@ -131,20 +131,17 @@ const Mint = () => {
                 <div>
                     <h1>Welcome to Nolengrad!</h1>
                     <h3>War has been declared. Recruit warriors to protect your kingdom!</h3>
-                    <h3 style={{display: 'flex', justifyContent: 'center'}}>Number of Vikings Deployed: &nbsp;{state.currentNGWSupply === 0 ? <Skeleton width={20} height={20} /> : state.currentNGWSupply}/256</h3>
+                    <h3 style={{display: 'flex', justifyContent: 'center'}}>Number of Vikings Deployed: &nbsp;{state.currentNGWSupply === 0 ? <Skeleton width={20} height={20} style={{display: 'flex', alignItems: "center"}}/> : state.currentNGWSupply}/256</h3>
                 </div>
                 <h3>Nolengrad Warriors is an NFT project utilizing Chainlink VRF to produce
                     verifiably random NFT's. Test it out below!
                 </h3>
                 <div className={styles.buttonHero}>
-                    <div onClick={() => mintNewWarrior()}>
-                        <Button text="Recruit - 0.001ETH" theme="light" width="md-lg" />
+                    <div className={styles.button} onClick={() => mintNewWarrior()}>
+                        <Button text="Recruit - 0.01 ETH" theme="light" width="medium" />
                     </div>
-                    <div onClick={() => mintArmy()}>
-                        <Button text="Recruit Army - 0.004ETH" theme="light" width="md-lg" />
-                    </div>
-                    <Link href="/about">
-                        <Button text="Learn More" theme="light" width="md-lg" />
+                    <Link href="/about" className={styles.button}>
+                        <Button text="Learn More" theme="light" width="medium" />
                     </Link>
                 </div>
             </div>
