@@ -20,6 +20,11 @@
     color: #8BFFFB;
 }
 
+.secondary {
+    color: #000B3D;
+    background-color: #8BFFFB;
+}
+
 .small {
     width: 100px
 }
@@ -28,9 +33,13 @@
     width: 150px;
 }
 
-.large {
+.md-lg {
     width: 200px;
-    height: 40px;
+}
+
+.large {
+    width: 250px;
+    /* height: 40px; */
     display: flex;
     justify-content: center;
     align-items: center;

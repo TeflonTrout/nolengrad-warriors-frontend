@@ -1,9 +1,7 @@
-import { useState } from "react"
 import Link from "next/link"
 import Button from "../../components/Button/Button"
 import styles from "./Mint.module.css"
 import { ethers } from 'ethers'
-import axios, { AxiosRequestConfig } from 'axios';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -11,11 +9,9 @@ import { useAccount, useContractRead, useContractWrite, usePrepareContractWrite,
 import { useDispatch } from 'react-redux'
 import { setCurrentNGWSupply, setIsMintingTrue, setModalData } from "../../redux/mainSlice"
 import { useAppSelector } from "../../utils/hooks"
-import { contractABI } from "../../utils/contract"
 
 const Mint = () => {
     const dispatch = useDispatch();
-    const [pullData, setPullData] = useState(false);
     const { address } = useAccount()
     const state = useAppSelector((state) => state.mainSlice);
 
@@ -35,9 +31,38 @@ const Mint = () => {
         },
     })
 
-    //   FUNCTION FOR CALLING THE WRITE FUNCTION
+    //   CONTRACT MINT ARMY CONFIGURATION
+    const { config: configArmy } = usePrepareContractWrite({
+        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+        abi: [{
+            "name": "mintArmy",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function",
+            "inputs": []
+        }] as const,
+        functionName: 'mintArmy',
+        overrides: {
+            value: ethers.utils.parseEther('0.004'),
+        },
+    })
+
+    //   FUNCTION FOR CALLING THE CONTRACT MINT FUNCTION
     const { write } = useContractWrite({
         ...config,
+        onSuccess(data) {
+            dispatch(setIsMintingTrue())
+            dispatch(setModalData([data.hash, "Pending..."]))
+        },
+        onError(data) {
+            dispatch(setIsMintingTrue())
+            dispatch(setModalData([data.message, "Error"]))
+        }
+    })
+
+    //   FUNCTION FOR CALLING THE CONTRACT MINT ARMY FUNCTION
+    const { write: writeArmy } = useContractWrite({
+        ...configArmy,
         onSuccess(data) {
             dispatch(setIsMintingTrue())
             dispatch(setModalData([data.hash, "Pending..."]))
@@ -77,45 +102,8 @@ const Mint = () => {
             dispatch(setCurrentNGWSupply(Number(data.toString())))
         }
     })
-
-    const {data: warriorStats } = useContractRead({
-        address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
-        abi: [{
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "warriorId",
-                    "type": "uint256"
-                }
-            ],
-            "name": "getWarriorStats",
-            "outputs": [
-                {
-                    "internalType": "uint256[6]",
-                    "name": "metadata",
-                    "type": "uint256[6]"
-                },
-                {
-                    "internalType": "string",
-                    "name": "uri",
-                    "type": "string"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        }] as const,
-        functionName: 'getWarriorStats',
-        args: [ethers.BigNumber.from(state?.currentNGWSupply)],
-        enabled: false,
-        onSuccess(data) {
-            console.log(Number(warriorSupply?.toString()))
-        },
-        onError(err) {
-            console.log('Error: ', err.message)
-        },
-    })
     
-    // INTERNAL FUNCTION FOR MINTING THE NFT
+    // CONTRACT FUNCTION FOR MINTING THE NFT
     const mintNewWarrior = () => {
         dispatch(setIsMintingTrue())
         if(address === undefined){
@@ -123,6 +111,17 @@ const Mint = () => {
         } else{
             dispatch(setModalData(["", "Pending..."]))
             write?.()
+        }
+    }
+
+    // CONTRACT FUNCTION FOR MINTING THE NFT
+    const mintArmy = () => {
+        dispatch(setIsMintingTrue())
+        if(address === undefined){
+            dispatch(setModalData(["User not signed in", "Error"]))
+        } else{
+            dispatch(setModalData(["", "Pending..."]))
+            writeArmy?.()
         }
     }
 
