@@ -10,7 +10,7 @@ const About = () => {
           <h2>I have written everything from the frontend you see now to the backend server and the Solidity contract!</h2>
           <p>The Frontend code can be viewed here: <a href="https://github.com/TeflonTrout/nolengrad-warriors-frontend" target="_blank" rel="noreferrer">Frontend Code</a></p>
           <p>The Backend server code can be viewed here: <a href="https://github.com/TeflonTrout/nolengrad-warriors-server" target="_blank" rel="noreferrer">Backend Code</a></p>
-          <p>The Smart Contract can be viewed here: <a href="https://goerli.etherscan.io/address/0x5f78e249f0eb5271567079c2d43abb87664a4510" target="_blank" rel="noreferrer">Solidity Code</a></p>
+          <p>The Smart Contract can be viewed here: <a href="https://goerli.etherscan.io/address/0x4B6Fde23Bb4224A3c57450C89902d48bB23f8819" target="_blank" rel="noreferrer">Solidity Code</a></p>
         </div>
         <span></span>
         <div className={styles.container}>

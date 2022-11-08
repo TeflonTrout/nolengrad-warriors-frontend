@@ -30,7 +30,7 @@ function NGWCard(props) {
       </div>
       <div className={styles.buttonContainer}>
         {/* <Button text="Purchase" theme="light" width="small"/> */}
-        <a href={`https://testnets.opensea.io/assets/goerli/0x5F78e249F0eb5271567079c2d43aBB87664A4510/${props?.data?.attributes[0].value}`} target="_blank" rel="noreferrer">
+        <a href={`https://testnets.opensea.io/assets/goerli/0x4B6Fde23Bb4224A3c57450C89902d48bB23f8819/${props?.data?.attributes[0].value}`} target="_blank" rel="noreferrer">
           <Button text="View on OpenSea" theme="light" width="large"/>
         </a>
       </div>
