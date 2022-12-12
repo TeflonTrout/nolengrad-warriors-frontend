@@ -22,7 +22,7 @@ const IndividualWarrior = () => {
         try {
           var config:AxiosRequestConfig = {
             method: 'get',
-            url: `https://battle-for-icy-fjord-server.herokuapp.com/warriors/${router?.query?.id}`,
+            url: `https://nolengrad-warriors-server.onrender.com/warriors/${router?.query?.id}`,
             headers: { 
               "Access-Control-Allow-Origin": "*"
             }

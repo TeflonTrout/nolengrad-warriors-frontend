@@ -19,7 +19,7 @@ const Gallery = () => {
       try {
         var config:AxiosRequestConfig = {
           method: 'get',
-          url: "https://battle-for-icy-fjord-server.herokuapp.com/getAll",
+          url: "https://nolengrad-warriors-server.onrender.com/getAll",
           headers: { 
             "Access-Control-Allow-Origin": "*"
           }
