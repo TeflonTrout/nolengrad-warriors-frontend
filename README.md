@@ -1,6 +1,10 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## The purpose of the project is to display my expertise with Fullstack Web3 Engineering!
+
+I utilized Next.js, Typescript, Express.js, MongoDB, and Solidity to create a Fullstack Web3 NFT Project!
+
+You can check out the server code [here](https://github.com/TeflonTrout/nolengrad-warriors-server) and the Etherscan verified smart contract [here](https://goerli.etherscan.io/address/0x4b6fde23bb4224a3c57450c89902d48bb23f8819)
 
 First, run the development server:
 
@@ -12,23 +16,28 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+You can attempt to mint one of the verifiably random NFTs by connecting your Web3 Wallet to the Goerli testnetwork and navigating to [http://localhost:3000/mint](http://localhost:3000/mint) and clicking on the "Recruit Button".
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Nolengrad Warriors (NGW) is an NFT project designed to utilize Chainlink's VRF Coordinator!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+What is Chainlink's VRF you ask? Check it out [here](https://docs.chain.link/docs/vrf/v2/introduction/)!
 
-## Learn More
+At it's core the VRF is an oracle that can be utilized by Smart Contracts for verified randomness.
 
-To learn more about Next.js, take a look at the following resources:
+This allows users to create elements of randomness within NFT projects like NGW!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each warrior token is given a random hash and from that hash they acquire the given attributes:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Strength
+- Dexterity
+- Charisma
+- Wisdom
+- House
+- Rarity
 
-## Deploy on Vercel
+The "House" and "Rarity" traits are used to evaluate which image the warrior will have. Also note, all the art is AI generated!!
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Protected from NFT Sniping
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The cool part you ask, all attributes are given ON MINT! What this means is there is no way to snipe a warrior with specific attributes.
+There is a private server that takes the values and stores the metadata in MongoDB.
