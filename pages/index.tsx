@@ -34,18 +34,19 @@ export default function Home() {
   return (
     <div className={styles.home}>
       <h1 className={styles.header}>Recently Minted</h1>
+      {dataArray?.length > 0 ? null : <h1 className={styles.header}>Please wait...I'm running off a free server and it can be a bit slow.</h1>}
       <div className={styles.cardGallery}>
         { dataArray?.length > 0 
           ? dataArray?.map((item:any, idx:number) => (
-              <NGWCard data={item} key={idx}/>
+            <NGWCard data={item} key={idx}/>
             ))
             : <div className={styles.cardGallery}>
-              <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
-              <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
-              <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
-              <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
-              <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
-              <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
+                <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
+                <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
+                <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
+                <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
+                <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
+                <Skeleton width={262} height={430} borderRadius={20} style={{margin: "0px", alignSelf: "center", display: 'flex', justifyContent: 'center', alignContent: 'center'}} />
             </div>
         }
       </div>
