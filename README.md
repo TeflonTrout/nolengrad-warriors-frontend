@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 I utilized Next.js, Typescript, Express.js, MongoDB, and Solidity to create a Fullstack Web3 NFT Project!
 
-You can check out the server code [here](https://github.com/TeflonTrout/nolengrad-warriors-server) and the Etherscan verified smart contract [here](https://goerli.etherscan.io/address/0x4b6fde23bb4224a3c57450c89902d48bb23f8819)
+You can check out the server code [here](https://github.com/TeflonTrout/nolengrad-warriors-server-51oi) and the Etherscan verified smart contract [here](https://goerli.etherscan.io/address/0x4b6fde23bb4224a3c57450c89902d48bb23f8819)
 
 First, run the development server:
 
